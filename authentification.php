@@ -32,13 +32,14 @@ if($r>0){
     $_SESSION["id"]=$volontaire[0]["id_vlt"];
     $_SESSION["nom"]=$volontaire[0]["nom_vlt"];
     $_SESSION["prenom"]=$volontaire[0]["prenom_vlt"];
-    header("location:profil.php");
+    header("location:profil.php")
+        \\connexion;
 }
 if($r==0){
     if($_SESSION["tentative"]>=2){
         echo "vous avez depasser le nombre de tentatives";
         header("location:inscrire.php");
-    }
+        }
     else{
         $_SESSION["tentative"]=$_SESSION["tentative"]+1;
         echo "email ou mot de passe incorrect";
